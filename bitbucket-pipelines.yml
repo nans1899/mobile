@@ -1,0 +1,13 @@
+image: cirrusci/flutter:2.10.1
+
+pipelines:
+  default:
+    - step:
+        name: "Build APK"
+        script:
+          - flutter doctor
+          - flutter packages get
+          - flutter clean
+          - flutter build apk
+        artifacts:
+          - build/app/outputs/apk/release/app-release.apk
